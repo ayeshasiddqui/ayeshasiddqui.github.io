@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Men's Products</title>
+    <style>
+        /* Style for the product images */
+        .product {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+            background-size: cover;
+            background-position: center;
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        /* Hover effect for product images */
+        .product:hover {
+            transform: scale(1.05);
+        }
+        /* Style for header */
+        header {
+            text-align: center;
+        }
+        /* Style for the navigation bar */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            background-color: #333; /* Dark grey background color */
+            color: #fff; /* White text color */
+            text-align: center;
+            padding-top: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            z-index: 1000;
+        }
+        nav a {
+            color: #fff; /* White text color */
+            text-decoration: none;
+            padding: 10px 20px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #555; /* Darker grey border */
+            transition: all 0.3s ease;
+        }
+        nav a:hover {
+            background-color: #555; /* Darker grey background color */
+        }
+    </style>
+</head>
+<body style="margin: 0; padding: 0; background-color: #ccc; color: #000;">
+
+    <!-- Navigation bar -->
+    <nav>
+        <a href="#shop_jackets">Men's Jackets</a>
+        <a href="#shop_watches">Men's Watches</a>
+        <a href="#shop_perfumes">Men's Perfumes</a>
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <h1>Men's Products</h1>
+    </header>
+
+    <!-- Gallery -->
+    <div class="gallery">
+        <a href="#shop_jackets" onclick="openModal('https://www.suitsexpert.com/wp-content/uploads/different-coats-and-jacket-styles-for-men-cover.jpg')" class="product" style="background-image: url('https://www.suitsexpert.com/wp-content/uploads/different-coats-and-jacket-styles-for-men-cover.jpg');"></a>
+        <a href="#shop_watches" onclick="openModal('https://cdn.luxe.digital/media/20230111151119/best-luxury-watch-brands-ranking-2023-luxe-digital.jpg')" class="product" style="background-image: url('https://cdn.luxe.digital/media/20230111151119/best-luxury-watch-brands-ranking-2023-luxe-digital.jpg');"></a>
+        <a href="#shop_perfumes" onclick="openModal('https://www.dubaiperfumeshop.ie/cdn/shop/articles/BLOG_8.jpg?v=1701269385&width=3000')" class="product" style="background-image: url('https://www.dubaiperfumeshop.ie/cdn/shop/articles/BLOG_8.jpg?v=1701269385&width=3000');"></a>
+    </div>
+
+    <script>
+        function openModal(imageUrl) {
+            var modal = document.createElement('div');
+            modal.style.position = 'fixed';
+            modal.style.top = '0';
+            modal.style.left = '0';
+            modal.style.width = '100%';
+            modal.style.height = '100%';
+            modal.style.backgroundColor = 'rgba(0,0,0,0.7)';
+            modal.style.zIndex = '1000';
+            modal.style.display = 'flex';
+            modal.style.justifyContent = 'center';
+            modal.style.alignItems = 'center';
+
+            var img = document.createElement('img');
+            img.src = imageUrl;
+            img.style.maxWidth = '90%';
+            img.style.maxHeight = '90%';
+            img.style.borderRadius = '10px';
+
+            modal.appendChild(img);
+
+            modal.addEventListener('click', function() {
+                modal.remove();
+            });
+
+            document.body.appendChild(modal);
+        }
+    </script>
+</body>
+</html>
