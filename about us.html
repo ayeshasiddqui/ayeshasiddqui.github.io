@@ -3,8 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>About Us - Mens Wears </title>
+    <!-- Add Bootstrap CSS link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #000; /* Black background for the body */
+            color: #fff; /* White text color */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            text-align: center;
+            background-color: #333; /* Dark grey background for the header */
+            padding: 1em;
+            color: #fff; /* White text color for the header */
+            margin-bottom: 20px; /* Add some space below the header */
+        }
+
+        .about-content {
+            background-color: #000; /* Black background for the content */
+            padding: 50px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); /* White shadow for depth */
+        }
+
+        h2 {
+            color: #8B4513; /* Brown color for headings */
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background-color: #333; /* Dark grey background for the footer */
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+    <title>About Us - Mens Fashion</title>
 </head>
 <body>
     <header>
@@ -12,13 +60,23 @@
     </header>
 
     <section class="about-content">
-        <p>Your one-stop destination for trendy and stylish menswear. We curate a collection of high-quality products, including watches, shoes, jackets, and perfumes, to enhance your style and confidence.</p>
-        <p>At Mens Fashion, we believe in offering the latest fashion trends without compromising on quality. Our team is dedicated to providing you with a seamless shopping experience and keeping you updated with the latest mens fashion.</p>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <h2>Our Story</h2>
+                    <p>We are a passionate team dedicated to providing high-quality men's fashion to our customers. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis sagittis nisi. Nulla facilisi. Nullam nec mauris ac quam ullamcorper semper. Nam ultricies tempus libero, sit amet posuere enim accumsan nec. Duis vehicula odio et metus dapibus, vitae aliquet libero hendrerit. Duis eget magna ullamcorper, ultrices eros ac, fermentum felis. Nulla facilisi. Fusce volutpat lacus eget tellus auctor, vel tincidunt nunc vestibulum.</p>
+                    <p>Donec feugiat ultricies mauris, sed hendrerit mi consectetur nec. Sed vitae lectus ut leo feugiat malesuada. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin auctor suscipit ipsum, ac congue nulla convallis ut.</p>
+                    <p>Contact us at: menswear750@gmail.com</p>
+                </div>
+            </div>
+        </div>
     </section>
-
+    
     <footer>
         <p>&copy; 2024 Mens Fashion</p>
     </footer>
+
+    <!-- Add Bootstrap JS scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-

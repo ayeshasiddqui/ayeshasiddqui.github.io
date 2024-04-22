@@ -3,107 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Men's Products</title>
+    <title>Mens Watches</title>
     <style>
-        /* Style for the product images */
-        .product {
-            display: inline-block;
+        body {
+            background-color: #f2f2f2; /* Grey background */
+            font-family: Arial, sans-serif;
+        }
+        header {
+            background-color: #333; /* Dark grey header */
+            color: white;
+            text-align: center;
+            padding: 20px;
+            text-transform: uppercase; /* Convert header text to uppercase */
+        }
+        .watch-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+        .watch {
+            width: 300px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
             margin: 10px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            cursor: pointer;
-            background-size: cover;
-            background-position: center;
+            background-color: white;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+        }
+        .watch img {
             max-width: 100%;
             height: auto;
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-        }
-        /* Hover effect for product images */
-        .product:hover {
-            transform: scale(1.05);
-        }
-        /* Style for header */
-        header {
-            text-align: center;
-        }
-        /* Style for the navigation bar */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100vh;
-            background-color: #333; /* Dark grey background color */
-            color: #fff; /* White text color */
-            text-align: center;
-            padding-top: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            z-index: 1000;
-        }
-        nav a {
-            color: #fff; /* White text color */
-            text-decoration: none;
-            padding: 10px 20px;
-            margin-bottom: 10px;
-            border-bottom: 1px solid #555; /* Darker grey border */
-            transition: all 0.3s ease;
-        }
-        nav a:hover {
-            background-color: #555; /* Darker grey background color */
         }
     </style>
 </head>
-<body style="margin: 0; padding: 0; background-color: #ccc; color: #000;">
+<body>
+    <header>Mens Watches</header>
 
-    <!-- Navigation bar -->
-    <nav>
-        <a href="#shop_jackets">Men's Jackets</a>
-        <a href="#shop_watches">Men's Watches</a>
-        <a href="#shop_perfumes">Men's Perfumes</a>
-    </nav>
+    <div class="watch-container">
+        <div class="watch">
+            <img src="https://static-01.daraz.pk/p/1aa85bd7852e6ef0087255a1c60719c7.jpg" alt="Black Watch">
+            <h2>Black Watch</h2>
+            <p>Price: $40,000 <button onclick="toggleDescription('black')">buy now </button></p>
 
-    <!-- Header -->
-    <header>
-        <h1>Men's Products</h1>
-    </header>
+            <p>The Black Watch, also known as the Royal Highland Regiment, boasts a rich history steeped in tradition and bravery...</p>
+        </div>
+        <!-- Repeat similar divs for other watches -->
+        <div class="watch">
+            <img src="https://global.danielwellington.com/cdn/shop/collections/aziz_1.jpg?v=1676890876" alt="Grey Watch">
+            <h2>Grey Watch</h2>
+            <p>Price: $34,000 <button onclick="toggleDescription('grey')">buy now </button></p>
 
-    <!-- Gallery -->
-    <div class="gallery">
-        <a href="#shop_jackets" onclick="openModal('https://www.suitsexpert.com/wp-content/uploads/different-coats-and-jacket-styles-for-men-cover.jpg')" class="product" style="background-image: url('https://www.suitsexpert.com/wp-content/uploads/different-coats-and-jacket-styles-for-men-cover.jpg');"></a>
-        <a href="#shop_watches" onclick="openModal('https://cdn.luxe.digital/media/20230111151119/best-luxury-watch-brands-ranking-2023-luxe-digital.jpg')" class="product" style="background-image: url('https://cdn.luxe.digital/media/20230111151119/best-luxury-watch-brands-ranking-2023-luxe-digital.jpg');"></a>
-        <a href="#shop_perfumes" onclick="openModal('https://www.dubaiperfumeshop.ie/cdn/shop/articles/BLOG_8.jpg?v=1701269385&width=3000')" class="product" style="background-image: url('https://www.dubaiperfumeshop.ie/cdn/shop/articles/BLOG_8.jpg?v=1701269385&width=3000');"></a>
+            <p>The Grey Watch emerges from the shadows, silent sentinels of stealth and precision...</p>
+        </div>
+        <div class="watch">
+            <img src="https://timepiecesusa.com/cdn/shop/products/9346B-M4_1400x.jpg?v=1712849870" alt="Blue Watch">
+            <h2>Blue Watch</h2>
+            <p>Price: $30,000 <button onclick="toggleDescription('black')">buy now </button></p>
+
+            <p>The Blue Watch, a modern embodiment of vigilance and service, stands as a beacon of safety in communities around the world...</p>
+        </div>
+        <div class="watch">
+            <img src="https://annlouise.ca/cdn/shop/products/97A136.jpg?v=1662761280&width=1445" alt="Brown Watch">
+            <h2>Brown Watch</h2>
+            <p>Price: $27,000 <button onclick="toggleDescription('Brown')">buy now </button></p>
+
+            <p>The Brown Watch, a stalwart force rooted in nature's embrace, embodies the spirit of wilderness and conservation...</p>
+        </div>
+        <div class="watch">
+            <img src="https://m.media-amazon.com/images/I/51S9UBjwyyL._AC_SY350_.jpg" alt="Golden Shine Watch">
+            <h2>Golden Shine Watch</h2>
+            <p>Price: $50,000 <button onclick="toggleDescription(golden shiny')">buy now </button></p>
+
+            <p>The Golden Shine Watch, a symbol of opulence and elegance, epitomizes luxury horology with its exquisite craftsmanship and timeless design...</p>
+        </div>
     </div>
-
-    <script>
-        function openModal(imageUrl) {
-            var modal = document.createElement('div');
-            modal.style.position = 'fixed';
-            modal.style.top = '0';
-            modal.style.left = '0';
-            modal.style.width = '100%';
-            modal.style.height = '100%';
-            modal.style.backgroundColor = 'rgba(0,0,0,0.7)';
-            modal.style.zIndex = '1000';
-            modal.style.display = 'flex';
-            modal.style.justifyContent = 'center';
-            modal.style.alignItems = 'center';
-
-            var img = document.createElement('img');
-            img.src = imageUrl;
-            img.style.maxWidth = '90%';
-            img.style.maxHeight = '90%';
-            img.style.borderRadius = '10px';
-
-            modal.appendChild(img);
-
-            modal.addEventListener('click', function() {
-                modal.remove();
-            });
-
-            document.body.appendChild(modal);
-        }
-    </script>
 </body>
 </html>
+
+
