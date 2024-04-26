@@ -45,55 +45,38 @@
             <img src="https://static.thcdn.com/productimg/960/960/14406791-3275049628072323.jpg" alt="Perfume 1">
             <h2>Jasmine </h2>
             <p>Price: $20,000 <button onclick="toggleDescription('Jasmine')">buy now</button></p>
-            <p>This luxurious fragrance features notes of jasmine, sandalwood, and amber, creating a sophisticated and long-lasting scent experience.</p>
+            <p id="Jasmine" style="display: none;">This luxurious fragrance features notes of jasmine, sandalwood, and amber, creating a sophisticated and long-lasting scent experience.</p>
         </div>
-
-
-
         <!-- Repeat similar divs for other perfumes -->
         <div class="perfume">
             <img src="https://rukminim2.flixcart.com/image/850/1000/xif0q/perfume/k/j/d/50-whisky-oud-long-lasting-perfume-for-men-spicy-woody-oudh-original-imagx5csqkgbbupy.jpeg?q=20&crop=false" alt="Perfume 2">
             <h2>chocolate</h2>
-            <p>Price: $26,000 <button onclick="toggleDescription(chocolate')">buy now</button></p>
-            <p>A captivating blend of citrus, lavender, and musk, this perfume is perfect for the modern gentleman who appreciates elegance and refinement.</p>
+            <p>Price: $26,000 <button onclick="toggleDescription('chocolate')">buy now</button></p>
+            <p id="chocolate" style="display: none;">A captivating blend of citrus, lavender, and musk, this perfume is perfect for the modern gentleman who appreciates elegance and refinement.</p>
         </div>
         <div class="perfume">
             <img src="https://m.media-amazon.com/images/I/81GAu80I4kL._AC_UF894,1000_QL80_.jpg" alt="Perfume 3">
             <h2>Gold</h2>
-
-
             <p>Price: $44,000 <button onclick="toggleDescription('gold')">buy now</button></p>
-            <p>Experience the essence of sophistication with this exquisite fragrance, featuring notes of bergamot, leather, and patchouli.</p>
+            <p id="gold" style="display: none;">Experience the essence of sophistication with this exquisite fragrance, featuring notes of bergamot, leather, and patchouli.</p>
         </div>
-        
-        
         <div class="perfume">
-
-
-        </div>
             <img src="https://www.fashionbeans.com/wp-content/uploads/2023/03/BestsummerColognes_Header.jpg" alt="Perfume 5">
             <h2>Summer</h2>
             <p>Price: $30.000 <button onclick="toggleDescription('summer')">buy now</button></p>
-            <p>Embrace the allure of mystery with this intoxicating fragrance, featuring notes of oud, incense, and vanilla for a truly unique olfactory experience.</p>
+            <p id="summer" style="display: none;">Embrace the allure of mystery with this intoxicating fragrance, featuring notes of oud, incense, and vanilla for a truly unique olfactory experience.</p>
         </div>
     </div>
 
-
-
     <script>
         function toggleDescription(perfume) {
-            var description = document.getElementById(perfume).style.display;
-            if (description === "none") {
-                document.getElementById(perfume).style.display = "block";
+            var description = document.getElementById(perfume);
+            if (description.style.display === "none") {
+                description.style.display = "block";
             } else {
-                document.getElementById(perfume).style.display = "none";
+                description.style.display = "none";
             }
         }
     </script>
 </body>
 </html>
-
-
-
-
-            
