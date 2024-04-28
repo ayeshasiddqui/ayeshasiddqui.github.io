@@ -17,23 +17,64 @@
             text-transform: uppercase; /* Convert header text to uppercase */
         }
         .perfume-container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
             padding: 20px;
+            justify-items: center;
         }
+
         .perfume {
-            width: 300px;
             border: 1px solid #ddd;
             border-radius: 5px;
-            margin: 10px;
             background-color: white;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
             padding: 15px;
+            width: 100%;
         }
         .perfume img {
             max-width: 100%;
             height: auto;
+        }
+        .perfume .description {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            box-sizing: border-box;
+            z-index: 1;
+            overflow: hidden;
+            transition: opacity 0.3s ease;
+            border-radius: 8px;
+        }
+        .perfume:hover .description {
+            display: block;
+            opacity: 1;
+        }
+        .perfume .description p {
+            margin: 0;
+            color: #333;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        .perfume .read-more {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .perfume .read-more:hover {
+            background-color: #555;
         }
     </style>
 </head>
@@ -41,42 +82,172 @@
     <header>Mens Perfumes</header>
 
     <div class="perfume-container">
-        <div class="perfume">
+        <!-- Perfume 1 -->
+        <div class="perfume" onclick="toggleDescription('Jasmine')">
             <img src="https://static.thcdn.com/productimg/960/960/14406791-3275049628072323.jpg" alt="Perfume 1">
-            <h2>Jasmine </h2>
-            <p>Price: $20,000 <button onclick="toggleDescription('Jasmine')">buy now</button></p>
-            <p id="Jasmine" style="display: none;">This luxurious fragrance features notes of jasmine, sandalwood, and amber, creating a sophisticated and long-lasting scent experience.</p>
+            <h2>Jasmine</h2>
+            <p>Price: $20,000 <button>Buy Now</button></p>
+            <div class="description">
+            <p class="description">This luxurious fragrance features notes of jasmine, sandalwood, and amber, creating a sophisticated and long-lasting scent experience. Jasmine perfume is a timeless classic, suitable for any occasion. Its floral scent is both refreshing and captivating, making it a popular choice among men who appreciate elegance and refinement. The combination of sandalwood and amber adds depth and warmth to the fragrance, ensuring it lingers throughout the day without being overpowering. Whether you're heading to a business meeting or a romantic dinner, Jasmine perfume is sure to leave a lasting impression. Keywords: Jasmine, sandalwood, amber, fragrance, classic, floral, refreshing, captivating, elegance, refinement, warmth, lasting impression.</p>
+            </div>
+          <p class="read-more" onclick="toggleDescription('Jasmine')">Read More</p>
         </div>
-        <!-- Repeat similar divs for other perfumes -->
-        <div class="perfume">
+        <!-- Perfume 2 -->
+        <div class="perfume" onclick="toggleDescription('Chocolate')">
             <img src="https://rukminim2.flixcart.com/image/850/1000/xif0q/perfume/k/j/d/50-whisky-oud-long-lasting-perfume-for-men-spicy-woody-oudh-original-imagx5csqkgbbupy.jpeg?q=20&crop=false" alt="Perfume 2">
-            <h2>chocolate</h2>
-            <p>Price: $26,000 <button onclick="toggleDescription('chocolate')">buy now</button></p>
-            <p id="chocolate" style="display: none;">A captivating blend of citrus, lavender, and musk, this perfume is perfect for the modern gentleman who appreciates elegance and refinement.</p>
+            <h2>Chocolate</h2>
+            <p>Price: $26,000 <button>Buy Now</button></p>
+            <p class="read-more" onclick="toggleDescription('p2')">Read More</p>
+            <div class="description">
+            <p class="description">A captivating blend of citrus, lavender, and musk, this perfume is perfect for the modern gentleman who appreciates elegance and refinement. The warm and spicy notes of oudh add depth and complexity to the fragrance, while the woody undertones evoke a sense of masculinity and strength. Whether worn during the day or evening, Chocolate perfume is sure to leave a lasting impression. Its long-lasting formula ensures that you stay fresh and confident throughout the day, while its unique scent sets you apart from the crowd. Keywords: Chocolate, citrus, lavender, musk, oudh, woody, masculinity, strength, lasting impression, confidence.</p>
+            </div>
         </div>
-        <div class="perfume">
+        <!-- Perfume 3 -->
+        <div class="perfume" onclick="toggleDescription('Gold')">
             <img src="https://m.media-amazon.com/images/I/81GAu80I4kL._AC_UF894,1000_QL80_.jpg" alt="Perfume 3">
             <h2>Gold</h2>
-            <p>Price: $44,000 <button onclick="toggleDescription('gold')">buy now</button></p>
-            <p id="gold" style="display: none;">Experience the essence of sophistication with this exquisite fragrance, featuring notes of bergamot, leather, and patchouli.</p>
+            <p>Price: $44,000 <button>Buy Now</button></p>
+            <p class="read-more" onclick="toggleDescription('p3')">Read More</p>
+            <div class="description">
+            <p class="description">Experience the essence of sophistication with this exquisite fragrance, featuring notes of bergamot, leather, and patchouli. Gold perfume is a luxurious scent that exudes confidence and style. Its rich and complex aroma is perfect for special occasions or everyday wear, making it a versatile addition to any man's grooming routine. The combination of bergamot and leather creates a bold and masculine scent, while the earthy undertones of patchouli add depth and warmth. Whether you're dressing up for a night out or simply want to feel your best, Gold perfume is sure to make you stand out from the crowd. Keywords: Gold, bergamot, leather, patchouli, sophistication, confidence, style, bold, masculine, earthy, warmth.</p>
+            </div>
         </div>
-        <div class="perfume">
-            <img src="https://www.fashionbeans.com/wp-content/uploads/2023/03/BestsummerColognes_Header.jpg" alt="Perfume 5">
+        <!-- Perfume 4 -->
+        <div class="perfume" onclick="toggleDescription('Summer')">
+            <img src="https://www.fashionbeans.com/wp-content/uploads/2023/03/BestsummerColognes_Header.jpg" alt="Perfume 4">
             <h2>Summer</h2>
-            <p>Price: $30.000 <button onclick="toggleDescription('summer')">buy now</button></p>
-            <p id="summer" style="display: none;">Embrace the allure of mystery with this intoxicating fragrance, featuring notes of oud, incense, and vanilla for a truly unique olfactory experience.</p>
+            <p>Price: $30,000 <button>Buy Now</button></p>
+            <p class="read-more" onclick="toggleDescription('p4')">Read More</p>
+            <div class="description">
+            <p class="description">Embrace the allure of mystery with this intoxicating fragrance, featuring notes of oud, incense, and vanilla for a truly unique olfactory experience. Summer perfume is a sophisticated and sensual scent that captures the essence of the season. Its refreshing citrus notes are balanced by the warm and spicy undertones of oud and incense, creating a harmonious blend that is both alluring and captivating. The addition of vanilla adds a touch of sweetness, making it the perfect fragrance for warm summer nights. Whether you're lounging by the pool or exploring a new city, Summer perfume is sure to leave a lasting impression. Keywords: Summer, mystery, intoxicating, oud, incense, vanilla, refreshing, citrus, harmonious, alluring, captivating, sweetness.</p>
+            </div>
+        </div> <!-- Perfume 5 -->
+        <div class="perfume" onclick="toggleDescription('Ocean')">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoXO-vRQmIbWS7MMc8ppThvvjliHrD3iGweF2frIxc3w&s" alt="Perfume 5">
+            <h2>Ocean Breeze</h2>
+            <p>Price: $35,000 <button>Buy Now</button></p>
+            <p class="read-more" onclick="toggleDescription(p5)">Read More</p>
+
+            <p class="description">Feel refreshed with the invigorating scent of the ocean breeze, infused with notes of sea salt, citrus, and driftwood. Ocean Breeze perfume is a light and airy fragrance that evokes the feeling of a day at the beach. Its fresh and aquatic notes are reminiscent of the sea, while the subtle hints of citrus add a touch of brightness. The woody undertones of driftwood provide depth and complexity, making it a versatile scent that can be worn day or night. Whether you're heading to the office or spending a day outdoors, Ocean Breeze perfume is sure to lift your spirits and energize your senses. Keywords: Ocean Breeze, refreshed, invigorating, sea salt, citrus, driftwood, light, airy, aquatic, brightness, versatile, energize.</p>
         </div>
+
+        <!-- Perfume 6 -->
+        <div class="perfume" onclick="toggleDescription('Libre')">
+            <img src="https://img.freepik.com/premium-photo/women-perfume-glass-bottle-advertising-promotional-mockup-product-packaging-rendering-closeup_327903-702315.jpg" alt="Perfume 6">
+            <h2>Libre Intense</h2>
+            <p>Price: $48,000 <button>Buy Now</button></p>
+            <p class="read-more" onclick="toggleDescription('p6')">Read More</p>
+
+            <p class="description">Make a bold statement with Libre Intense, a powerful blend of lavender, orange blossom, and musk, expressing freedom and strength. Libre Intense perfume is a modern and sophisticated fragrance that celebrates individuality and self-expression. Its vibrant citrus notes are balanced by the floral sweetness of orange blossom, while the earthy undertones of musk add depth and complexity. Whether you're heading to a business meeting or a night out on the town, Libre Intense perfume is sure to turn heads and leave a lasting impression. Keywords: Libre Intense, bold statement, lavender, orange blossom, musk, freedom, strength, modern, sophisticated, individuality, self-expression, vibrant, sweetness, earthy, turn heads.</p>
+        </div>
+
+
+        <!-- Perfume 7 -->
+        <div class="perfume" onclick="toggleDescription('Acqua')">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcGMSpi7QhPSXpOLb9t9w8c5w2NwUDftoGi_PN1Ip9pQ&s" alt="Perfume 7">
+            <h2>Acqua Di Gio Profondo</h2>
+            <p>Price: $42,000 <button>Buy Now</button></p>
+            <p class="read-more" onclick="toggleDescription('p7')">Read More</p>
+
+            <p class="description">Dive into the depths of freshness with Acqua Di Gio Profondo, featuring aquatic notes, bergamot, and rosemary, reminiscent of the ocean. Acqua Di Gio Profondo perfume is a refreshing and invigorating scent that captures the essence of the sea. Its aquatic notes are complemented by the citrusy brightness of bergamot, while the herbal undertones of rosemary add depth and complexity. Whether you're lounging by the pool or exploring a new destination, Acqua Di Gio Profondo perfume is sure to transport you to a world of tranquility and serenity. Keywords: Acqua Di Gio Profondo, freshness, aquatic, bergamot, rosemary, ocean, refreshing, invigorating, sea, herbal, tranquility, serenity.</p>
+        </div>
+
+        <!-- Perfume 8 -->
+        <div class="perfume" onclick="toggleDescription('Black')">
+            <img src="https://images.pexels.com/photos/965989/pexels-photo-965989.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Perfume 8">
+            <h2>Black Orchid</h2>
+            <p>Price: $55,000 <button>Buy Now</button></p>
+            <p class="read-more" onclick="toggleDescription('p8')">Read More</p>
+
+            <p class="description">Indulge in the exotic allure of Black Orchid, a seductive blend of black truffle, ylang-ylang, and blackcurrant, capturing the essence of luxury. Black Orchid perfume is a luxurious and sensual fragrance that exudes sophistication and glamour. Its rich and decadent aroma is perfect for special occasions or romantic evenings, making it a timeless addition to any man's collection. The combination of black truffle and ylang-ylang creates a bold and intoxicating scent, while the fruity sweetness of blackcurrant adds a touch of allure. Whether you're dressing up for a night out or simply want to feel your best, Black Orchid perfume is sure to make a statement. Keywords: Black Orchid, exotic allure, black truffle, ylang-ylang, blackcurrant, luxury, sophistication, glamour, decadent, timeless, bold, intoxicating, fruity, statement.</p>
+        </div>
+        <!-- Perfume 9 -->
+        <div class="perfume" onclick="toggleDescription('Sauvage')">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbpmhy6WPDkHHuawSmf2DhKdrLLM6yw2PqYj4F-pOQXKIajw6A0SCbb11VNjzO2xKIxXs&usqp=CAU" alt="Perfume 9">
+            <h2>Sauvage</h2>
+            <p>Price: $50,000 <button>Buy Now</button></p>
+            <p class="read-more" onclick="toggleDescription('p9')">Read More</p>
+
+            <p class="description">Embark on an exhilarating journey with Sauvage, a dynamic fragrance featuring spicy bergamot, Sichuan pepper, and Ambroxan for an irresistible allure. Sauvage perfume is a bold and daring scent that captures the spirit of adventure and exploration. Its spicy and aromatic notes are complemented by the freshness of bergamot, while the woody undertones of Sichuan pepper add warmth and depth. Whether you're navigating the urban jungle or trekking through the wilderness, Sauvage perfume is sure to inspire confidence and excitement. Keywords: Sauvage, exhilarating journey, bergamot, Sichuan pepper, Ambroxan, dynamic, fragrance, spicy, aromatic, freshness, woody, adventure, exploration, confidence, excitement.</p>
+        </div>
+
+        <!-- Perfume 10 -->
+        <div class="perfume" onclick="toggleDescription('La')">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo_8sPHKHxUGkRWerb6AjCjN0KjiiXhddqjDPAMDxGXw&s" alt="Perfume 10">
+            <h2>La Nuit de L'Homme</h2>
+            <p>Price: $60,000 <button>Buy Now</button></p>
+            <p class="read-more" onclick="toggleDescription('p10')">Read More</p>
+
+            <p class="description">Experience the seductive charm of La Nuit de L'Homme, with its blend of cardamom, cedar, and coumarin, evoking the mystery of the night. La Nuit de L'Homme perfume is a sensual and captivating fragrance that is perfect for evening wear. Its warm and spicy notes are balanced by the freshness of cardamom, while the woody undertones of cedar add depth and complexity. Whether you're out for a romantic dinner or hitting the town with friends, La Nuit de L'Homme perfume is sure to make you feel confident and alluring. Keywords: La Nuit de L'Homme, seductive charm, cardamom, cedar, coumarin, mystery, night, sensual, captivating, evening wear, warm, spicy, woody, confident, alluring.</p>
+        </div>
+
+        <!-- Perfume 11 -->
+        <div class="perfume" onclick="toggleDescription('Explorer')">
+            <img src="https://johnlewis.scene7.com/is/image/JohnLewis/240016157alt2?$rsp-pdp-port-640$" alt="Perfume 11">
+            <h2>Explorer</h2>
+
+            <p>Price: $45,000 <button>Buy Now</button></p>
+            <p class="read-more" onclick="toggleDescription('p11')">Read More</p>
+
+            <p class="description">Embark on an adventurous journey with Explorer, featuring notes of bergamot, vetiver, and pink pepper, capturing the spirit of exploration and discovery. Explorer perfume is a dynamic and invigorating scent that is perfect for the modern explorer. Its citrusy top notes are complemented by the earthy aroma of vetiver, while the spicy undertones of pink pepper add warmth and depth. Whether you're trekking through the wilderness or navigating the urban jungle, Explorer perfume is sure to inspire you to new heights. Keywords: Explorer, adventurous journey, bergamot, vetiver, pink pepper, exploration, discovery, dynamic, invigorating, modern, explorer, citrusy, earthy, spicy, inspire.</p>
+        </div>
+        <!-- Perfume 12 -->
+        <div class="perfume" onclick="toggleDescription('Herod')">
+            <img src="https://theperfumeclub.pk/cdn/shop/products/PARFUMS_DE_MARLY_HEROD_M_EDP_125ML_533x.png?v=1675687635_" alt="Perfume 12">
+            <h2>Herod</h2>
+            <p>Price: $65,000 <button>Buy Now</button></p>
+            <p class="read-more" onclick="toggleDescription('p12')">Read More</p>
+
+            <p class="description">Indulge in the regal aroma of Herod, featuring tobacco, cinnamon, and vanilla, reminiscent of the opulence of royalty. Herod perfume is a luxurious and opulent fragrance that evokes the grandeur of the past. Its rich and decadent aroma is perfect for special occasions or formal events, making it a timeless addition to any man's collection. The combination of tobacco and cinnamon creates a warm and spicy scent, while the sweetness of vanilla adds a touch of indulgence. Whether you're attending a gala or simply want to feel like royalty, Herod perfume is sure to make you stand out from the crowd. Keywords: Herod, regal aroma, tobacco, cinnamon, vanilla, opulence, royalty, luxurious, opulent, grandeur, rich, decadent, warm, spicy, indulgence, stand out.</p>
+        </div>
+
+        <!-- Perfume 13 -->
+        <div class="perfume" onclick="toggleDescription('Invictus')">
+            <img src="https://upsilonofficial.com/cdn/shop/files/5_8.jpg?v=1697799925" alt="Perfume 13">
+            <h2>Invictus</h2>
+            <p>Price: $55,000 <button>Buy Now</button></p>
+            <p class="read-more" onclick="toggleDescription('p13')">Read More</p>
+
+            <p class="description">Unleash your inner champion with Invictus, a dynamic fragrance featuring marine accord, grapefruit, and ambergris for a victorious allure. Invictus perfume is a bold and energetic scent that is perfect for the modern man. Its citrusy top notes are balanced by the aquatic freshness of marine accord, while the warm and earthy undertones of ambergris add depth and complexity. Whether you're hitting the gym or heading to a business meeting, Invictus perfume is sure to inspire confidence and success. Keywords: Invictus, inner champion, marine accord, grapefruit, ambergris, dynamic, fragrance, bold, energetic, modern, citrusy, aquatic, freshness, warm, earthy, confidence, success.</p>
+        </div>
+        <!-- Perfume 14 -->
+        <div class="perfume" onclick="toggleDescription('Carolina')">
+            <img src="https://pbs.twimg.com/media/FnqIqruWYAAmx2d.jpg" alt="Perfume 14">
+            <h2>Carolina Herrera</h2>
+            <p>Price: $70,000 <button>Buy Now</button></p>          
+              <p class="read-more" onclick="toggleDescription('p14')">Read More</p>
+
+            <p class="description">Elevate your style with Carolina Herrera, a sophisticated blend of vetiver, saffron, and tonka bean, exuding timeless elegance and charm. Carolina Herrera perfume is a classic and refined fragrance that is perfect for the discerning gentleman. Its woody and spicy notes are complemented by the sweetness of tonka bean, while the exotic aroma of saffron adds a touch of luxury. Whether you're attending a black-tie event or a casual gathering, Carolina Herrera perfume is sure to make a lasting impression. Keywords: Carolina Herrera, elevate your style, vetiver, saffron, tonka bean, sophistication, timeless elegance, charm, classic, refined, woody, spicy, sweetness, luxury, lasting impression.</p>
+        </div>
+        <!-- Perfume 15 -->
+        <div class="perfume" onclick="toggleDescription('Dior')">
+            <img src="https://www.dior.com/dw/image/v2/BGXS_PRD/on/demandware.static/-/Sites-master_dior/default/dw0357dd84/Y0996086/Y0996086_C099600486_E01_GHC.jpg?sw=800" alt="Perfume 15">
+            <h2>Dior Homme</h2>
+            <p>Price: $75,000 <button>Buy Now</button></p>
+            <p class="read-more" onclick="toggleDescription(p15)">Read More</p>
+
+            <p class="description">Discover the essence of sophistication with Dior Homme, featuring iris, leather, and vetiver, for a modern and elegant scent experience. Dior Homme perfume is a luxurious and refined fragrance that captures the spirit of Parisian style. Its powdery floral notes are balanced by the warmth of leather, while the earthy undertones of vetiver add depth and complexity. Whether you're dressing up for a night out or simply want to feel your best, Dior Homme perfume is sure to make you stand out from the crowd. Keywords: Dior Homme, essence of sophistication, iris, leather, vetiver, modern, elegant, luxurious, refined, Parisian style, powdery floral, warmth, earthy, stand out.</p>
+        </div>
+   
+        
+
+
+   
     </div>
 
     <script>
-        function toggleDescription(perfume) {
-            var description = document.getElementById(perfume);
-            if (description.style.display === "none") {
-                description.style.display = "block";
-            } else {
-                description.style.display = "none";
+        function toggleDescription(perfumeName) {
+            var descriptions = document.getElementsByClassName("description");
+            for (var i = 0; i < descriptions.length; i++) {
+                var description = descriptions[i];
+                if (description.classList.contains(perfumeName)) {
+                    description.style.display = description.style.display === "block" ? "none" : "block";
+                } else {
+                    description.style.display = "none";
+                }
             }
         }
     </script>
 </body>
 </html>
+

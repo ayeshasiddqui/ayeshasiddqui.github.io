@@ -6,34 +6,93 @@
     <title>Mens Watches</title>
     <style>
         body {
-            background-color: #f2f2f2; /* Grey background */
+            background-color: #f2f2f2;
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
         }
         header {
-            background-color: #333; /* Dark grey header */
+            background-color: #333;
             color: white;
             text-align: center;
             padding: 20px;
-            text-transform: uppercase; /* Convert header text to uppercase */
+            text-transform: uppercase;
         }
         .watch-container {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
             padding: 20px;
+            box-sizing: border-box;
         }
         .watch {
-            width: 300px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
+            width: calc(33.33% - 20px);
             margin: 10px;
             background-color: white;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             padding: 15px;
+            box-sizing: border-box;
+            position: relative;
+            transition: transform 0.3s ease;
+            border-radius: 8px;
+        }
+        .watch:hover {
+            transform: translateY(-5px);
         }
         .watch img {
-            max-width: 100%;
+            width: 100%;
             height: auto;
+            margin-bottom: 10px;
+            border-radius: 8px;
+        }
+        .watch h2 {
+            margin-top: 0;
+            font-size: 1.2rem;
+            color: #333;
+        }
+        .watch p {
+            margin: 0;
+            color: #666;
+        }
+        .watch .description {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            box-sizing: border-box;
+            z-index: 1;
+            overflow: hidden;
+            transition: opacity 0.3s ease;
+            border-radius: 8px;
+        }
+        .watch:hover .description {
+            display: block;
+            opacity: 1;
+        }
+        .watch .description p {
+            margin: 0;
+            color: #333;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        .watch .read-more {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .watch .read-more:hover {
+            background-color: #555;
         }
     </style>
 </head>
@@ -41,46 +100,118 @@
     <header>Mens Watches</header>
 
     <div class="watch-container">
+        <!-- Watch 1 -->
         <div class="watch">
             <img src="https://static-01.daraz.pk/p/1aa85bd7852e6ef0087255a1c60719c7.jpg" alt="Black Watch">
             <h2>Black Watch</h2>
-            <p>Price: $40,000 <button onclick="toggleDescription('black')">buy now </button></p>
-
-            <p>The Black Watch, also known as the Royal Highland Regiment, boasts a rich history steeped in tradition and bravery...</p>
+            <p>Price: $40,000</p>
+            <button class="read-more" onclick="toggleDescription('black')">Read More</button>
+            <div class="description">
+                <p>The Black Watch, also known as the Royal Highland Regiment, boasts a rich history steeped in tradition and bravery. It has been an iconic symbol of military prowess for centuries, with its sleek design and precision engineering.</p>
+            </div>
         </div>
-        <!-- Repeat similar divs for other watches -->
+        <!-- Watch 2 -->
         <div class="watch">
             <img src="https://global.danielwellington.com/cdn/shop/collections/aziz_1.jpg?v=1676890876" alt="Grey Watch">
             <h2>Grey Watch</h2>
-            <p>Price: $34,000 <button onclick="toggleDescription('grey')">buy now </button></p>
-
-            
-            <p>The Grey Watch emerges from the shadows, silent sentinels of stealth and precision...</p>
+            <p>Price: $34,000</p>
+            <button class="read-more" onclick="toggleDescription('grey')">Read More</button>
+            <div class="description">
+                <p>The Grey Watch emerges from the shadows, silent sentinels of stealth and precision. Its understated elegance and refined craftsmanship make it a timeless accessory for any occasion.</p>
+            </div>
         </div>
+        <!-- Watch 3 -->
         <div class="watch">
             <img src="https://timepiecesusa.com/cdn/shop/products/9346B-M4_1400x.jpg?v=1712849870" alt="Blue Watch">
             <h2>Blue Watch</h2>
-            <p>Price: $30,000 <button onclick="toggleDescription('black')">buy now </button></p>
-
-            <p>The Blue Watch, a modern embodiment of vigilance and service, stands as a beacon of safety in communities around the world...</p>
+            <p>Price: $30,000</p>
+            <button class="read-more" onclick="toggleDescription('blue')">Read More</button>
+            <div class="description">
+                <p>The Blue Watch, a modern embodiment of vigilance and service, stands as a beacon of safety in communities around the world. Its striking blue dial and sturdy construction make it a reliable companion for any adventure.</p>
+            </div>
         </div>
+        <!-- Watch 4 -->
         <div class="watch">
             <img src="https://annlouise.ca/cdn/shop/products/97A136.jpg?v=1662761280&width=1445" alt="Brown Watch">
             <h2>Brown Watch</h2>
-            <p>Price: $27,000 <button onclick="toggleDescription('Brown')">buy now </button></p>
-
-            <p>The Brown Watch, a stalwart force rooted in nature's embrace, embodies the spirit of wilderness and conservation...</p>
+            <p>Price: $27,000</p>
+            <button class="read-more" onclick="toggleDescription('brown')">Read More</button>
+            <div class="description">
+                <p>The Brown Watch, a stalwart force rooted in nature's embrace, embodies the spirit of wilderness and conservation. Its earthy tones and rugged design evoke a sense of adventure and exploration.</p>
+            </div>
         </div>
+        <!-- Watch 5 -->
         <div class="watch">
             <img src="https://m.media-amazon.com/images/I/51S9UBjwyyL._AC_SY350_.jpg" alt="Golden Shine Watch">
             <h2>Golden Shine Watch</h2>
-            <p>Price: $50,000 <button onclick="toggleDescription(golden shiny')">buy now </button></p>
-
-            <p>The Golden Shine Watch, a symbol of opulence and elegance, epitomizes luxury horology with its exquisite craftsmanship and timeless design...</p>
+            <p>Price: $50,000</p>
+            <button class="read-more" onclick="toggleDescription('golden')">Read More</button>
+            <div class="description">
+                <p>The Golden Shine Watch, a symbol of opulence and elegance, epitomizes luxury horology with its exquisite craftsmanship and timeless design. Its shimmering gold accents and intricate detailing make it a coveted accessory for discerning gentlemen.</p>
+            </div>
         </div>
+        <!-- Watch 6 -->
+        <div class="watch">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTS1USQW_w50eyRikv7LkYppnlQSyMI90e_dC4WZFouwQ&s" alt="Green Watch">
+            <h2>Green Watch</h2>
+            <p>Price: $32,000</p>
+            <button class="read-more" onclick="toggleDescription('green')">Read More</button>
+            <div class="description">
+                <p>The Green Watch, a symbol of nature's harmony and vitality, reflects the lush landscapes and verdant forests. Its verdant hues and organic design elements evoke a sense of tranquility and renewal.</p>
+            </div>
+        </div>
+        <!-- Watch 7 -->
+        <div class="watch">
+            <img src="https://world-time.es/7750-thickbox_default/ga-2100-4aer.jpg" alt="Red Watch">
+            <h2>Red Watch</h2>
+            <p>Price: $36,000</p>
+            <button class="read-more" onclick="toggleDescription('red')">Read More</button>
+            <div class="description">
+                <p>The Red Watch, a fiery symbol of passion and determination, ignites the spirit with its bold design and relentless precision. Its vibrant red dial and robust construction make it a statement piece for those who dare to stand out.</p>
+            </div>
+        </div>
+        <!-- Watch 8 -->
+        <div class="watch">
+            <img src="https://rukminim2.flixcart.com/image/850/1000/xif0q/watch/w/m/a/1-ga-110-all-white-and-gold-sports-chronograph-chronorex-men-original-imaghhg8kkryzywr.jpeg?q=90&crop=false" alt="White Watch">
+            <h2>White Watch</h2>
+            <p>Price: $38,000</p>
+            <button class="read-more" onclick="toggleDescription('white')">Read More</button>
+            <div class="description">
+                <p>The White Watch, a symbol of purity and clarity, stands as a beacon of elegance and sophistication. Its pristine white dial and minimalist design exude timeless charm and refinement.</p>
+            </div>
+        </div>
+        <!-- Watch 9 -->
+        <div class="watch">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAQrjkE80XDpoPpIwTmyo8LxOnSOC2dKPNINDE0T2qqw&s" alt="Purple Watch">
+            <h2>Purple Watch</h2>
+            <p>Price: $31,000</p>
+            <button class="read-more" onclick="toggleDescription('purple')">Read More</button>
+            <div class="description">
+                <p>The Purple Watch, an emblem of regality and mystique, enchants with its deep hues and royal allure. Its rich purple tones and luxurious design make it a statement accessory for the modern gentleman.</p>
+            </div>
+        </div>
+        <!-- Watch 10 -->
+        <div class="watch">
+            <img src="https://i.pinimg.com/564x/bc/a1/de/bca1def0e453585693ec10b64b14c8e4.jpg" alt="Silver Watch">
+            <h2>Silver Watch</h2>
+            <p>Price: $33,000</p>
+            <button class="read-more" onclick="toggleDescription('silver')">Read More</button>
+            <div class="description">
+                <p>The Silver Watch, a symbol of sophistication and refinement, captivates with its timeless elegance and understated charm. Its sleek silver tones and classic design elements make it a versatile accessory for any wardrobe.</p>
+            </div>
+        </div>
+        <!-- Add more watches similarly -->
     </div>
+
+    <script>
+        function toggleDescription(color) {
+            var descriptions = document.querySelectorAll('.description p');
+            descriptions.forEach(function(description) {
+                description.style.display = 'none'; // Hide all descriptions initially
+            });
+            var selectedDescription = document.querySelector('.' + color + ' .description p');
+            selectedDescription.style.display = 'block'; // Display the selected description
+        }
+    </script>
 </body>
 </html>
-
-
-
