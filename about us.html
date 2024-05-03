@@ -7,9 +7,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            background-color: #000; /* Black background for the body */
-            color: #fff; /* White text color */
-            font-family: Arial, sans-serif;
+            background-color: #f8f9fa; /* Light grey background for the body */
+            color: #333; /* Dark text color */
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
         }
@@ -23,11 +23,11 @@
         }
 
         .about-content {
-            background-color: #000; /* Black background for the content */
+            background-color: #fff; /* White background for the content */
             padding: 50px;
             border-radius: 8px;
             text-align: center;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); /* White shadow for depth */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Grey shadow for depth */
         }
 
         h2 {
@@ -40,6 +40,7 @@
             font-size: 18px;
             line-height: 1.6;
             margin-bottom: 20px;
+            color: #555; /* Dark grey text color */
         }
 
         footer {
@@ -51,8 +52,19 @@
             bottom: 0;
             width: 100%;
         }
+
+        footer p {
+            margin-bottom: 0; /* Remove margin bottom for footer paragraph */
+        }
+
+        /* Media query for responsiveness */
+        @media screen and (max-width: 768px) {
+            .about-content {
+                padding: 30px; /* Decrease padding on smaller screens */
+            }
+        }
     </style>
-    <title>About Us - Mens Fashion</title>
+    <title>About Us - Men's Fashion</title>
 </head>
 <body>
     <header>
@@ -66,20 +78,17 @@
                     <h2>Our Story</h2>
                     <p>We are a passionate team dedicated to providing high-quality men's fashion to our customers. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis sagittis nisi. Nulla facilisi. Nullam nec mauris ac quam ullamcorper semper. Nam ultricies tempus libero, sit amet posuere enim accumsan nec. Duis vehicula odio et metus dapibus, vitae aliquet libero hendrerit. Duis eget magna ullamcorper, ultrices eros ac, fermentum felis. Nulla facilisi. Fusce volutpat lacus eget tellus auctor, vel tincidunt nunc vestibulum.</p>
                     <p>Donec feugiat ultricies mauris, sed hendrerit mi consectetur nec. Sed vitae lectus ut leo feugiat malesuada. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin auctor suscipit ipsum, ac congue nulla convallis ut.</p>
-                    <p>Contact us at: menswear750@gmail.com</p>
+                    <p>Contact us at: <a href="mailto:menswear750@gmail.com" style="color: #8B4513;">menswear750@gmail.com</a></p>
                 </div>
             </div>
         </div>
     </section>
     
     <footer>
-
-    </footer>
-        <p>&copy; 2024 Mens Fashion</p>
+        <p>&copy; 2024 Men's Fashion</p>
     </footer>
 
     <!-- Add Bootstrap JS scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
